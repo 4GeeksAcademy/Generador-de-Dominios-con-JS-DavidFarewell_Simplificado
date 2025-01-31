@@ -1,1 +1,61 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+#domainList {
+  width: 50%;
+  max-width: 600px;
+  text-align: center;
+  background-color: #bdbdbd; /* Gris medio */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 0;
+  list-style: none; /* Quita los estilos de lista */
+  overflow: hidden; /* Para evitar que los bordes redondeados se vean mal */
+}
+
+#domainList li {
+  background-color: #bdbdbd; /* Mismo gris medio */
+  padding: 12px;
+  font-size: 18px;
+  color: #333; /* Texto oscuro */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Sutil separación */
+}
+
+#domainList li:last-child {
+  border-bottom: none; /* Quita el borde del último elemento */
+}
+
+#boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  color: #ffffff;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  padding: 19px 24px;
+  cursor: pointer;
+  margin-top: 20px; /* Asegura espacio entre el botón y la lista */
+  width: fit-content;
+  position: relative;
+}
+#boton:active,
+#boton:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  #boton {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
