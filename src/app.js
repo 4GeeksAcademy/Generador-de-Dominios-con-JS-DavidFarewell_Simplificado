@@ -19,13 +19,14 @@ window.onload = function() {
   function generateDomains() {
     domainList.innerHTML = "";
 
-    let domains = pronouns
-      .map(pronoun =>
-        adjectives.map(adjective =>
-          nouns.map(noun => `${pronoun}${adjective}${noun}${extension}`)
-        )
-      )
-      .flat(2);
+    let domains = [];
+    for (let i = 0; i < pronouns.length; i++) {
+      adjectives.map(adj => {
+        nouns.map(noun => {
+          domains.push(`${pronouns[i]}${adj}${noun}${extension}`);
+        });
+      });
+    }
 
     domains.forEach((domain, index) => {
       let li = document.createElement("li");
